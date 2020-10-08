@@ -47,6 +47,7 @@ const AirportSelector = ({ selectedAirport, setState, actionProvider }) => {
   }, []);
 
   const handleSubmit = (e) => {
+    console.log(airports)
     setState((state) => ({
       ...state,
       selectedAirport: airports.find(

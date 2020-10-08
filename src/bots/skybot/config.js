@@ -12,11 +12,11 @@ import ManageParkingLink from "./widgets/Link/ManageParkingLink";
 import LostBaggageLink from "./widgets/Link/LostBaggageLink";
 import FlightBotAvatar from "./domainComponents/FlightBotAvatar";
 
-const botName = "Skybot";
+const botName = "VisualBot";
 
 const config = {
   botName: botName,
-  lang: "en",
+  lang: "pt",
   initialMessages: [
     createChatBotMessage(`Hi I'm ${botName}.`),
     createChatBotMessage(

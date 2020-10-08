@@ -1,9 +1,9 @@
 import React from "react";
-import ExamplesSection from "./components/pagesections/ExamplesSection/ExamplesSection";
+import ChatbotSection from "./components/pagesections/ChatbotSection/ChatbotSection";
 
 function App() {
   return (
-    <ExamplesSection />
+    <ChatbotSection />
   );
 }
 
