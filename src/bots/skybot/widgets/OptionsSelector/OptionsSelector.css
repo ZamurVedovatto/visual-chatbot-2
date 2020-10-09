@@ -1,4 +1,4 @@
-.airport-selector-container {
+.optionsselector-container {
   background-color: #2898ec;
   color: #fff;
   padding: 10px;
@@ -7,12 +7,13 @@
   font-size: 0.9rem;
 }
 
-.airport-selector-heading {
+.optionsselector-heading {
   font-size: 1rem;
   margin: 0 0 8px 0;
 }
 
-.airport-button-confirm {
+.optionsbutton-confirm {
+  width: 100%;
   display: block;
   margin: 12px auto;
   background-color: #fff;
@@ -24,7 +25,7 @@
   border: none;
 }
 
-.airport-selector {
+.optionsselector {
   background: #fff;
   color: #2898ec;
   font-weight: bold;

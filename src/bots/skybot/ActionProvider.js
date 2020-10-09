@@ -58,11 +58,11 @@ class ActionProvider {
     this.addMessageToState(message);
   };
 
-  handleAirport = () => {
+  handleOptionsSelector = () => {
     const message = this.createChatBotMessage(
-      "Do you need to switch airport?",
+      "Você gostaria de alterar o Serviço escolhido?",
       {
-        widget: "airportSelector",
+        widget: "optionsSelector",
         loading: true,
         terminateLoading: true,
       }
@@ -73,7 +73,7 @@ class ActionProvider {
 
   handleOptions = (options) => {
     const message = this.createChatBotMessage(
-      "How can I help you? Below are some possible options.",
+      "Como posso ajuda-lo? A seguir, algumas opções:",
       {
         widget: "options",
         loading: true,
@@ -98,14 +98,14 @@ class ActionProvider {
     this.addMessageToState(message);
   };
 
-  handleFlightTypeChoice = (type) => {
+  handleTypeChoice = (type) => {
     const message = this.createChatBotMessage(
-      `Thanks. I'll retrieve the next 5 ${type} flights from your chosen airport. If you are searching for a specific flight, try typing in the flightID? (example: SK1423)`,
+      `Obrigado por escolher ${type}`,
       {
         loading: true,
         terminateLoading: true,
         withAvatar: true,
-        widget: "flightList",
+        widget: "listOptions",
       }
     );
 
@@ -142,14 +142,14 @@ class ActionProvider {
     this.addMessageToState(message);
   };
 
-  handleParkingOptions = () => {
+  handleOptionsButtons = () => {
     const message = this.createChatBotMessage(
       `How can I help you with parking?`,
       {
         loading: true,
         terminateLoading: true,
         withAvatar: true,
-        widget: "parkingOptions",
+        widget: "optionsButtons",
       }
     );
 

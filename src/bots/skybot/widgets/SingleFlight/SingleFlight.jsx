@@ -4,38 +4,38 @@ import { ReactComponent as DepartureFlight } from "../../icons/plane-departure.s
 import { ReactComponent as ArrivalFlight } from "../../icons/plane-arrival.svg";
 import { ReactComponent as Arrows } from "../../icons/arrows-h.svg";
 
-import { getFlightsData } from "../../data/data";
+import { getListData } from "../../data/data";
 
 import "./SingleFlight.css";
 import { ConditionallyRender } from "react-util-kit";
 
 const SingleFlight = ({
   selectedFlightId,
-  selectedAirport,
+  selectedService,
   scrollIntoView,
 }) => {
   const [selectedFlight, setSelectedFlight] = useState(null);
 
-  const { iata } = selectedAirport;
+  const { serviceID } = selectedService;
 
   useEffect(() => {
     const getFlight = (arr) =>
       arr.filter((flight) => flight.FlightId === selectedFlightId)[0];
 
     const getFlights = async () => {
-      let newFlights = await getFlightsData(iata, "departure");
+      let newFlights = await getListData(serviceID, "departure");
       let selectedFlight = getFlight(newFlights);
 
       if (selectedFlight) return setSelectedFlight(selectedFlight);
 
-      newFlights = await getFlightsData(iata, "arrival");
+      newFlights = await getListData(serviceID, "arrival");
       selectedFlight = getFlight(newFlights);
 
       if (selectedFlight) return setSelectedFlight(selectedFlight);
       setSelectedFlight("notfound");
     };
     getFlights();
-  }, [iata, selectedFlightId]);
+  }, [serviceID, selectedFlightId]);
 
   useEffect(() => scrollIntoView());
 

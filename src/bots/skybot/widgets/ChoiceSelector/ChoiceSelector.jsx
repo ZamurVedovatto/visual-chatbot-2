@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./FlightsSelector.css";
+import "./ChoiceSelector.css";
 
 const FlightsSelector = (props) => {
   const { setState, actionProvider } = props;
@@ -8,27 +8,27 @@ const FlightsSelector = (props) => {
   const setType = async (type) => {
     setState((state) => ({
       ...state,
-      flightType: type,
+      choiceType: type,
     }));
 
-    actionProvider.handleFlightTypeChoice(type);
+    actionProvider.handleTypeChoice(type);
   };
 
   return (
     <div>
-      <h1 className="flight-selector-header">Arrival or departure?</h1>
+      <h1 className="flight-selector-header">Sim ou não?</h1>
       <div className="flight-selector-button-container">
         <button
           className="flights-selector-button"
-          onClick={() => setType("arrival")}
+          onClick={() => setType(true)}
         >
-          Arrival
+          Sim
         </button>
         <button
           className="flights-selector-button"
-          onClick={() => setType("departure")}
+          onClick={() => setType(false)}
         >
-          Departure
+          Não
         </button>
       </div>
     </div>

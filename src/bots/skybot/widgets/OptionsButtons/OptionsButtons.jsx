@@ -1,8 +1,8 @@
 import React from "react";
 
-import "./Options.css";
+import "./OptionsButtons.css";
 
-const Options = props => {
+const OptionsButtons = props => {
   return (
     <div className="options">
       <h1 className="options-header">{props.title}</h1>
@@ -23,4 +23,4 @@ const Options = props => {
   );
 };
 
-export default Options;
+export default OptionsButtons;

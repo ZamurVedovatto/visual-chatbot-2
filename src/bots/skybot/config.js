@@ -1,47 +1,47 @@
 import React from "react";
 import { createChatBotMessage } from "react-chatbot-kit";
 
-import AirportSelector from "./widgets/AirportSelector/AirportSelector";
-import FlightsSelector from "./widgets/FlightsSelector/FlightsSelector";
-import FlightList from "./widgets/FlightList/FlightList";
+import OptionsSelector from "./widgets/OptionsSelector/OptionsSelector";
+import ChoiceSelector from "./widgets/ChoiceSelector/ChoiceSelector";
+import ListOptions from "./widgets/ListOptions/ListOptions";
 import SingleFlight from "./widgets/SingleFlight/SingleFlight";
 import GeneralOptions from "./widgets/GeneralOptions/GeneralOptions";
-import ParkingOptions from "./widgets/ParkingOptions/ParkingOptions";
+import OptionsButtons from "./widgets/OptionsButtons/OptionsButtons";
 import BookParkingLink from "./widgets/Link/BookParkingLink";
 import ManageParkingLink from "./widgets/Link/ManageParkingLink";
 import LostBaggageLink from "./widgets/Link/LostBaggageLink";
-import FlightBotAvatar from "./domainComponents/FlightBotAvatar";
+import BotAvatar from "./domainComponents/BotAvatar";
 
 const botName = "VisualBot";
 
 const config = {
   botName: botName,
-  lang: "pt",
+  lang: "pt-BR",
   initialMessages: [
-    createChatBotMessage(`Hi I'm ${botName}.`),
+    createChatBotMessage(`Olá, eu sou o ${botName}.`),
     createChatBotMessage(
-      "First things first, which airport are you looking for information from?",
+      "Primeiramente, para qual tipo de serviço você está buscando informação?",
       {
-        widget: "airportSelector",
+        widget: "optionsSelector",
         delay: 500,
       }
     ),
   ],
   state: {
     airports: [],
-    selectedAirport: { iata: "OSL", nameCompact: "Oslo" },
+    selectedService: { serviceID: "1", label: "Sistemas" },
     flightType: "",
     selectedFlightId: "",
     selectedFlight: null,
   },
   customComponents: {
-    botAvatar: (props) => <FlightBotAvatar {...props} />,
+    botAvatar: (props) => <BotAvatar {...props} />,
   },
   widgets: [
     {
-      widgetName: "airportSelector",
-      widgetFunc: (props) => <AirportSelector {...props} />,
-      mapStateToProps: ["messages", "selectedAirport", "airports"],
+      widgetName: "optionsSelector",
+      widgetFunc: (props) => <OptionsSelector {...props} />,
+      mapStateToProps: ["messages", "selectedService", "airports"],
     },
     {
       widgetName: "options",
@@ -49,36 +49,36 @@ const config = {
     },
     {
       widgetName: "flightSelector",
-      widgetFunc: (props) => <FlightsSelector {...props} />,
-      mapStateToProps: ["selectedAirport"],
+      widgetFunc: (props) => <ChoiceSelector {...props} />,
+      mapStateToProps: ["selectedService"],
     },
     {
-      widgetName: "flightList",
-      widgetFunc: (props) => <FlightList {...props} />,
-      mapStateToProps: ["flightType", "selectedAirport"],
+      widgetName: "listOptions",
+      widgetFunc: (props) => <ListOptions {...props} />,
+      mapStateToProps: ["flightType", "selectedService"],
     },
     {
       widgetName: "singleFlight",
       widgetFunc: (props) => <SingleFlight {...props} />,
       mapStateToProps: [
         "selectedFlightId",
-        "selectedAirport",
+        "selectedService",
         "selectedFlight",
       ],
     },
     {
-      widgetName: "parkingOptions",
-      widgetFunc: (props) => <ParkingOptions {...props} />,
+      widgetName: "optionsButtons",
+      widgetFunc: (props) => <OptionsButtons {...props} />,
     },
     {
       widgetName: "bookParkingLink",
       widgetFunc: (props) => <BookParkingLink {...props} />,
-      mapStateToProps: ["selectedAirport"],
+      mapStateToProps: ["selectedService"],
     },
     {
       widgetName: "manageParkingLink",
       widgetFunc: (props) => <ManageParkingLink {...props} />,
-      mapStateToProps: ["selectedAirport"],
+      mapStateToProps: ["selectedService"],
     },
     {
       widgetName: "lostLuggageLink",

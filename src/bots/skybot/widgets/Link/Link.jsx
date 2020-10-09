@@ -13,7 +13,7 @@ const Link = ({ url, title }) => {
       className="url-link"
     >
       <UrlIcon className="url-icon" />
-      <h1 className="url-header">Go to {title}</h1>
+      <h1 className="url-header">Ir para {title}</h1>
     </a>
   );
 };

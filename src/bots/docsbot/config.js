@@ -11,7 +11,7 @@ const botName = "DocsBot";
 
 const config = {
   botName: botName,
-  lang: "no",
+  lang: "pt-BR",
   customStyles: {
     botMessageBox: {
       backgroundColor: "#376B7E",

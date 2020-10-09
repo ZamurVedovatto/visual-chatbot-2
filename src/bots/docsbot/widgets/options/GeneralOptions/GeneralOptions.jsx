@@ -1,5 +1,5 @@
 import React from "react";
-import Options from "../Options/Options";
+import OptionsButtons from "../OptionsButtons/OptionsButtons";
 
 const GeneralOptions = (props) => {
   const options = [
@@ -25,7 +25,7 @@ const GeneralOptions = (props) => {
     },
   ];
 
-  return <Options options={options} />;
+  return <OptionsButtons options={options} />;
 };
 
 export default GeneralOptions;

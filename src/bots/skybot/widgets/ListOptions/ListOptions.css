@@ -1,34 +1,34 @@
-.flight-list-header {
+.listoptions-header {
   font-size: 1rem;
   font-weight: normal;
 }
 
-.flight-list {
+.listoptions {
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
 
-.flight-header-container {
+.listoption-header-container {
   display: flex;
   font-size: 0.7rem;
   font-weight: bold;
 }
 
-.flight-id-header {
+.listoption-id-header {
   margin-left: 35px;
   width: 60px;
 }
 
-.flight-airport-header {
+.listoption-airport-header {
   width: 40px;
 }
 
-.flight-time-header {
+.listoption-time-header {
   width: 50px;
 }
 
-.flight-list-item {
+.listoptions-item {
   display: flex;
   font-size: 0.7rem;
   align-items: center;
@@ -36,7 +36,7 @@
   width: 100%;
 }
 
-.flight-list-icon-container {
+.listoptions-icon-container {
   height: 12.5px;
   width: 12.5px;
   padding: 5px;
@@ -48,7 +48,7 @@
   justify-content: center;
 }
 
-.flight-list-icon-container-arrival {
+.listoptions-icon-container-arrival {
   height: 12.5px;
   width: 12.5px;
   padding: 5px;
@@ -60,16 +60,16 @@
   justify-content: center;
 }
 
-.flightlist-icon {
+.listoptions-icon {
   width: 12.5px;
   fill: #fff;
 }
 
-.flight-id {
+.listoption-id {
   width: 60px;
 }
 
-.flight-list-error {
+.listoptions-error {
   font-size: 0.9rem;
   max-width: 184.5px;
   color: #fff;
@@ -80,10 +80,10 @@
   font-size: 0.9rem;
 }
 
-.flight-airport {
+.listoption-airport {
   width: 40px;
 }
 
-.flight-time {
+.listoption-time {
   width: 50px;
 }

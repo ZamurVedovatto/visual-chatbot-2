@@ -1,6 +1,6 @@
 import React from "react";
 
-import Options from "../Options/Options";
+import OptionsButtons from "../OptionsButtons/OptionsButtons";
 
 const ParkingOptions = props => {
   const options = [
@@ -15,7 +15,7 @@ const ParkingOptions = props => {
       id: 2
     }
   ];
-  return <Options options={options} title="Parking options" {...props} />;
+  return <OptionsButtons options={options} title="Parking options" {...props} />;
 };
 
 export default ParkingOptions;

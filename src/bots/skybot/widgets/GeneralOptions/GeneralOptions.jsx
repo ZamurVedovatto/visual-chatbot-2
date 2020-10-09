@@ -1,27 +1,31 @@
 import React from "react";
 
-import Options from "../Options/Options";
+import OptionsButtons from "../OptionsButtons/OptionsButtons";
 
 const GeneralOptions = props => {
   const options = [
     {
-      name: "flights",
+      name: "Implantação de novo sistema",
       handler: props.actionProvider.handleFlightsChoice,
       id: 1
     },
-    { name: "baggage", handler: props.actionProvider.handleLostLuggage, id: 2 },
+    { 
+      name: "Opções disponíveis",
+      handler: props.actionProvider.handleLostLuggage,
+      id: 2
+    },
     {
-      name: "parking",
-      handler: props.actionProvider.handleParkingOptions,
+      name: "Atualização de versão",
+      handler: props.actionProvider.handleOptionsButtons,
       id: 3
     },
     {
-      name: "switch airport",
-      handler: props.actionProvider.handleAirport,
+      name: "Trocar opção de atendimento",
+      handler: props.actionProvider.handleOptionsSelector,
       id: 5
     }
   ];
-  return <Options options={options} title="Options" {...props} />;
+  return <OptionsButtons options={options} title="Como posso ajuda-lo?" {...props} />;
 };
 
 export default GeneralOptions;
