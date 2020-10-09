@@ -1,9 +1,9 @@
 import React from "react";
-import ChatbotSection from "./components/pagesections/ChatbotSection/ChatbotSection";
+import ChatbotComponent from "./components/ChatbotComponent/ChatbotComponent";
 
 function App() {
   return (
-    <ChatbotSection />
+    <ChatbotComponent />
   );
 }
 
