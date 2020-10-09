@@ -6,27 +6,13 @@ class ActionProvider {
 
   handleContactTalk = () => {
     const message = this.createChatBotMessage(
-      "If you need to speak to a real person, you can call 67 03 00 00.",
+      "Se você quer conversar com uma pessoa, ligue para 3270-8000",
       {
         loading: true,
         terminateLoading: true,
         withAvatar: true,
       }
     );
-
-    this.addMessageToState(message);
-  };
-  handleManageParking = () => {
-    const message = this.createChatBotMessage(
-      "Here's a link to Avinors manage parking pages.",
-      {
-        widget: "manageParkingLink",
-        loading: true,
-        terminateLoading: true,
-        withAvatar: true,
-      }
-    );
-
     this.addMessageToState(message);
   };
 
@@ -40,23 +26,9 @@ class ActionProvider {
         withAvatar: true,
       }
     );
-
     this.addMessageToState(message);
   };
 
-  handleBookParking = () => {
-    const message = this.createChatBotMessage(
-      "Here's a link to Avinors book parking pages.",
-      {
-        widget: "linkOption",
-        loading: true,
-        terminateLoading: true,
-        withAvatar: true,
-      }
-    );
-
-    this.addMessageToState(message);
-  };
 
   handleOptionsSelector = () => {
     const message = this.createChatBotMessage(
@@ -67,7 +39,6 @@ class ActionProvider {
         terminateLoading: true,
       }
     );
-
     this.addMessageToState(message);
   };
 
@@ -81,7 +52,6 @@ class ActionProvider {
         ...options,
       }
     );
-
     this.addMessageToState(message);
   };
 
@@ -108,7 +78,6 @@ class ActionProvider {
         widget: "listOptions",
       }
     );
-
     this.addMessageToState(message);
   };
 
@@ -120,13 +89,12 @@ class ActionProvider {
         terminateLoading: true,
       }
     );
-
     this.addMessageToState(message);
   };
 
   handleOptionsButtons = () => {
     const message = this.createChatBotMessage(
-      `How can I help you with parking?`,
+      `Escolha uma das seguintes opções:`,
       {
         loading: true,
         terminateLoading: true,
@@ -134,7 +102,6 @@ class ActionProvider {
         widget: "optionsButtons",
       }
     );
-
     this.addMessageToState(message);
   };
 
