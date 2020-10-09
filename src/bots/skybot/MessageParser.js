@@ -4,11 +4,6 @@ class MessageParser {
   }
 
   parse(message) {
-    // if (this.containsFlightId(message)) {
-    //   const id = this.containsFlightId(message);
-    //   return this.actionProvider.handleFlightIdMatch(id);
-    // }
-
     if (
       message.includes("options") ||
       message.includes("help") ||
@@ -41,11 +36,6 @@ class MessageParser {
 
     return this.actionProvider.handleOptions({ withAvatar: true });
   }
-
-  // containsFlightId = (message) => {
-  //   const regexp = /[A-Z]{2,}[0-9]{2,}/gim;
-  //   return message.match(regexp);
-  // };
 }
 
 export default MessageParser;
