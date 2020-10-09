@@ -2,7 +2,7 @@ import React from "react";
 
 import "./ChoiceSelector.css";
 
-const FlightsSelector = (props) => {
+const ChoiceSelector = (props) => {
   const { setState, actionProvider } = props;
 
   const setType = async (type) => {
@@ -16,16 +16,16 @@ const FlightsSelector = (props) => {
 
   return (
     <div>
-      <h1 className="flight-selector-header">Sim ou não?</h1>
-      <div className="flight-selector-button-container">
+      <h1 className="choice-selector-header">Sim ou não?</h1>
+      <div className="choice-selector-button-container">
         <button
-          className="flights-selector-button"
+          className="choices-selector-button"
           onClick={() => setType(true)}
         >
           Sim
         </button>
         <button
-          className="flights-selector-button"
+          className="choices-selector-button"
           onClick={() => setType(false)}
         >
           Não
@@ -35,4 +35,4 @@ const FlightsSelector = (props) => {
   );
 };
 
-export default FlightsSelector;
+export default ChoiceSelector;

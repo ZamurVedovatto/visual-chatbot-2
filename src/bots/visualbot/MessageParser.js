@@ -19,7 +19,7 @@ class MessageParser {
       message.includes("person") ||
       message.includes("contact")
     ) {
-      return this.actionProvider.handleContactInfo();
+      return this.actionProvider.handleContactTalk();
     }
 
     if (message.includes("parking") || message.includes("parkering")) {
@@ -27,7 +27,7 @@ class MessageParser {
     }
 
     if (message.includes("flights") || message.includes("flight")) {
-      return this.actionProvider.handleFlightsChoice();
+      return this.actionProvider.handleChoiceOptions();
     }
 
     if (message.includes("airport")) {

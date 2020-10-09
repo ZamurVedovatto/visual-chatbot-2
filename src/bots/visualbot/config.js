@@ -4,12 +4,9 @@ import { createChatBotMessage } from "react-chatbot-kit";
 import OptionsSelector from "./widgets/OptionsSelector/OptionsSelector";
 import ChoiceSelector from "./widgets/ChoiceSelector/ChoiceSelector";
 import ListOptions from "./widgets/ListOptions/ListOptions";
-import SingleFlight from "./widgets/SingleFlight/SingleFlight";
 import GeneralOptions from "./widgets/GeneralOptions/GeneralOptions";
 import OptionsButtons from "./widgets/OptionsButtons/OptionsButtons";
-import BookParkingLink from "./widgets/Link/BookParkingLink";
-import ManageParkingLink from "./widgets/Link/ManageParkingLink";
-import LostBaggageLink from "./widgets/Link/LostBaggageLink";
+import LinkOption from "./widgets/Link/LinkOption";
 import BotAvatar from "./domainComponents/BotAvatar";
 
 const botName = "VisualBot";
@@ -30,9 +27,9 @@ const config = {
   state: {
     airports: [],
     selectedService: { serviceID: "1", label: "Sistemas" },
-    flightType: "",
-    selectedFlightId: "",
-    selectedFlight: null,
+    optionType: "",
+    selectedOptionId: "",
+    selectedOption: null,
   },
   customComponents: {
     botAvatar: (props) => <BotAvatar {...props} />,
@@ -48,42 +45,24 @@ const config = {
       widgetFunc: (props) => <GeneralOptions {...props} />,
     },
     {
-      widgetName: "flightSelector",
+      widgetName: "choice",
       widgetFunc: (props) => <ChoiceSelector {...props} />,
       mapStateToProps: ["selectedService"],
     },
     {
       widgetName: "listOptions",
       widgetFunc: (props) => <ListOptions {...props} />,
-      mapStateToProps: ["flightType", "selectedService"],
-    },
-    {
-      widgetName: "singleFlight",
-      widgetFunc: (props) => <SingleFlight {...props} />,
-      mapStateToProps: [
-        "selectedFlightId",
-        "selectedService",
-        "selectedFlight",
-      ],
+      mapStateToProps: ["optionType", "selectedService"],
     },
     {
       widgetName: "optionsButtons",
       widgetFunc: (props) => <OptionsButtons {...props} />,
     },
     {
-      widgetName: "bookParkingLink",
-      widgetFunc: (props) => <BookParkingLink {...props} />,
+      widgetName: "linkOption",
+      widgetFunc: (props) => <LinkOption {...props} />,
       mapStateToProps: ["selectedService"],
-    },
-    {
-      widgetName: "manageParkingLink",
-      widgetFunc: (props) => <ManageParkingLink {...props} />,
-      mapStateToProps: ["selectedService"],
-    },
-    {
-      widgetName: "lostLuggageLink",
-      widgetFunc: (props) => <LostBaggageLink {...props} />,
-    },
+    }
   ],
 };
 

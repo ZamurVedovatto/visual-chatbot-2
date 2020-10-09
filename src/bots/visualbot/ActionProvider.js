@@ -4,7 +4,7 @@ class ActionProvider {
     this.setState = setStateFunc;
   }
 
-  handleContactInfo = () => {
+  handleContactTalk = () => {
     const message = this.createChatBotMessage(
       "If you need to speak to a real person, you can call 67 03 00 00.",
       {
@@ -30,11 +30,11 @@ class ActionProvider {
     this.addMessageToState(message);
   };
 
-  handleLostLuggage = () => {
+  handleSendLink = () => {
     const message = this.createChatBotMessage(
-      "Here's a link to Avinors lost luggage pages.",
+      "Aqui vai o link solicitado.",
       {
-        widget: "lostLuggageLink",
+        widget: "linkOption",
         loading: true,
         terminateLoading: true,
         withAvatar: true,
@@ -48,7 +48,7 @@ class ActionProvider {
     const message = this.createChatBotMessage(
       "Here's a link to Avinors book parking pages.",
       {
-        widget: "bookParkingLink",
+        widget: "linkOption",
         loading: true,
         terminateLoading: true,
         withAvatar: true,
@@ -85,11 +85,11 @@ class ActionProvider {
     this.addMessageToState(message);
   };
 
-  handleFlightsChoice = () => {
+  handleChoiceOptions = () => {
     const message = this.createChatBotMessage(
-      "Awesome. I just need a little more information",
+      "Aqui deve ser exibido duas opções",
       {
-        widget: "flightSelector",
+        widget: "choice",
         withAvatar: true,
         loading: true,
         terminateLoading: true,
@@ -112,27 +112,9 @@ class ActionProvider {
     this.addMessageToState(message);
   };
 
-  handleFlightIdMatch = (flightId) => {
+  handleChoiceNotFound = () => {
     const message = this.createChatBotMessage(
-      `Here's what I found for this flight.`,
-      {
-        loading: true,
-        terminateLoading: true,
-        withAvatar: true,
-        widget: "singleFlight",
-      }
-    );
-
-    this.setState((state) => ({
-      ...state,
-      selectedFlightId: flightId[0],
-      messages: [...state.messages, message],
-    }));
-  };
-
-  handleFlightNotFound = () => {
-    const message = this.createChatBotMessage(
-      `Sorry, couldn't find anything for that flight.`,
+      `Opção sem retorno.`,
       {
         loading: true,
         terminateLoading: true,

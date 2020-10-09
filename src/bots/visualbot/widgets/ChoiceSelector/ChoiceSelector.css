@@ -1,4 +1,4 @@
-.flights-selector-button {
+.choices-selector-button {
   padding: 8px 15px;
   border: 1px solid #2898ec;
   border-radius: 25px;
@@ -9,12 +9,12 @@
   width: 100px;
 }
 
-.flight-selector-button-container {
+.choice-selector-button-container {
   display: flex;
   justify-content: space-between;
 }
 
-.flight-selector-header {
+.choice-selector-header {
   font-size: 1rem;
   font-weight: normal;
 }

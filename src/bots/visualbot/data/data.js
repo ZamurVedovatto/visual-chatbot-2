@@ -7,7 +7,7 @@ export const getListData = async (serviceID) => {
   // );
   // data = await data.json();
 
-
+  // buscar dados na API
   const data = {
     listOptions: [
       {

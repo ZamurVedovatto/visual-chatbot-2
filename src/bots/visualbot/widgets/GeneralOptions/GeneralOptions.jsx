@@ -5,27 +5,27 @@ import OptionsButtons from "../OptionsButtons/OptionsButtons";
 const GeneralOptions = props => {
   const options = [
     {
-      name: "Implantação de novo sistema",
-      handler: props.actionProvider.handleFlightsChoice,
+      name: "Choice",
+      handler: props.actionProvider.handleChoiceOptions,
       id: 1
     },
     { 
-      name: "Opções disponíveis",
-      handler: props.actionProvider.handleLostLuggage,
+      name: "Link",
+      handler: props.actionProvider.handleSendLink,
       id: 2
     },
     {
-      name: "Atualização de versão",
+      name: "Buttons",
       handler: props.actionProvider.handleOptionsButtons,
       id: 3
     },
     {
-      name: "Trocar opção de atendimento",
+      name: "Selection",
       handler: props.actionProvider.handleOptionsSelector,
       id: 5
     }
   ];
-  return <OptionsButtons options={options} title="Como posso ajuda-lo?" {...props} />;
+  return <OptionsButtons options={options} title="Não entendi. Como posso ajuda-lo?" {...props} />;
 };
 
 export default GeneralOptions;
